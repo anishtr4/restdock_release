@@ -83,7 +83,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function highlightPlatformCard(os) {
-        const cardId = `dl-${os}`;
+        let cardId;
+        if (os === 'mac') {
+            // Default to Apple Silicon for newer Macs
+            cardId = 'dl-mac-arm';
+        } else {
+            cardId = `dl-${os}`;
+        }
         const card = document.getElementById(cardId);
         if (card) {
             card.style.borderColor = 'var(--color-primary)';
@@ -111,20 +117,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updatePlatformCards(platforms) {
-        const map = {
-            'dl-mac': ['darwin-aarch64', 'darwin-x86_64'], // Prefer Apple Silicon or just link to one? 
-            'dl-win': ['windows-x86_64'],
-            'dl-linux': ['linux-x86_64']
-        };
+        // Update Mac ARM (Apple Silicon)
+        const macArmCard = document.getElementById('dl-mac-arm');
+        if (macArmCard && platforms['darwin-aarch64']) {
+            macArmCard.href = platforms['darwin-aarch64'].url;
+        }
 
-        // Update Mac
-        const macCard = document.getElementById('dl-mac');
-        if (macCard && platforms['darwin-aarch64']) {
-            // Default to Apple Silicon link for modern times, or maybe Intel? 
-            // Ideally we'd have a dropdown, but let's just use Silicon as primary for "Download" 
-            // or maybe the logic is "Clicking this card goes to GitHub releases unless we are sure".
-            // Let's set it to Silicon for now as a safe bet for "Mac" card
-            macCard.href = platforms['darwin-aarch64'].url;
+        // Update Mac Intel
+        const macIntelCard = document.getElementById('dl-mac-intel');
+        if (macIntelCard && platforms['darwin-x86_64']) {
+            macIntelCard.href = platforms['darwin-x86_64'].url;
         }
 
         // Update Windows
