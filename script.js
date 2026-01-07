@@ -24,7 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // OS Detection and Highlight
+
+    // --- Smart Download Logic ---
+
+    // 1. Detect OS
     function detectOS() {
         const platform = navigator.platform.toLowerCase();
         const userAgent = navigator.userAgent.toLowerCase();
@@ -39,42 +42,141 @@ document.addEventListener('DOMContentLoaded', () => {
         return null;
     }
 
-    const detectedOS = detectOS();
-    if (detectedOS) {
-        // Highlight the platform card
-        const cardId = `dl-${detectedOS}`;
-        const card = document.getElementById(cardId);
-        if (card) {
-            // Add a special highlight class or styling
-            card.style.borderColor = 'var(--color-primary)';
-            card.style.background = 'linear-gradient(135deg, rgba(242, 76, 0, 0.1), rgba(255, 255, 255, 0.05))';
-            card.style.transform = 'scale(1.05)';
+    // 2. Fetch Release Data & Update UI
+    async function initSmartDownloads() {
+        const detectedOS = detectOS();
+        const heroBtn = document.getElementById('hero-download-btn');
+        const navBtn = document.getElementById('nav-cta-btn');
 
-            // Add a "Recommended" badge
-            const badge = document.createElement('div');
-            badge.textContent = 'Recommended for you';
-            badge.style.position = 'absolute';
-            badge.style.top = '-12px';
-            badge.style.background = 'var(--color-primary)';
-            badge.style.color = 'white';
-            badge.style.padding = '4px 12px';
-            badge.style.borderRadius = '50px';
-            badge.style.fontSize = '0.75rem';
-            badge.style.fontWeight = '600';
-            card.appendChild(badge);
+        // Pre-highlight the OS card even before fetch
+        if (detectedOS) {
+            highlightPlatformCard(detectedOS);
         }
 
-        // Update Hero CTA text if needed, or leave it generic as "Download Now"
-        // But we can make it scroll to the specific card
-        const heroBtn = document.getElementById('hero-download-btn');
-        if (heroBtn) {
-            heroBtn.addEventListener('click', (e) => {
-                // Default behavior is smooth scroll to #download, which is fine
-                // But we could focus the card potentially?
-                // Let's stick to default smooth scroll for now.
-            });
+        try {
+            const response = await fetch('./latest.json');
+            if (!response.ok) throw new Error('Failed to load release data');
+            const data = await response.json();
+
+            // Update Platform Cards with direct links
+            updatePlatformCards(data.platforms);
+
+            // Update Primary CTA Buttons based on OS
+            if (detectedOS) {
+                updateHeroButton(heroBtn, navBtn, detectedOS, data);
+            }
+
+        } catch (error) {
+            console.warn('Smart Download Error:', error);
+            // Fallback is already set in HTML (GitHub Releases)
         }
     }
+
+    function highlightPlatformCard(os) {
+        const cardId = `dl-${os}`;
+        const card = document.getElementById(cardId);
+        if (card) {
+            card.style.borderColor = 'var(--color-primary)';
+            card.style.background = 'linear-gradient(135deg, rgba(255, 94, 0, 0.1), rgba(255, 255, 255, 0.05))';
+            card.style.transform = 'scale(1.03) translateY(-5px)';
+
+            // "Recommended" Badge
+            if (!card.querySelector('.rec-badge')) {
+                const badge = document.createElement('div');
+                badge.className = 'rec-badge';
+                badge.textContent = 'Recommended';
+                badge.style.position = 'absolute';
+                badge.style.top = '-12px';
+                badge.style.left = '24px';
+                badge.style.background = 'var(--color-primary)';
+                badge.style.color = 'white';
+                badge.style.padding = '4px 12px';
+                badge.style.borderRadius = '20px';
+                badge.style.fontSize = '12px';
+                badge.style.fontWeight = '600';
+                badge.style.boxShadow = '0 4px 12px rgba(255, 94, 0, 0.4)';
+                card.appendChild(badge);
+            }
+        }
+    }
+
+    function updatePlatformCards(platforms) {
+        const map = {
+            'dl-mac': ['darwin-aarch64', 'darwin-x86_64'], // Prefer Apple Silicon or just link to one? 
+            'dl-win': ['windows-x86_64'],
+            'dl-linux': ['linux-x86_64']
+        };
+
+        // Update Mac
+        const macCard = document.getElementById('dl-mac');
+        if (macCard && platforms['darwin-aarch64']) {
+            // Default to Apple Silicon link for modern times, or maybe Intel? 
+            // Ideally we'd have a dropdown, but let's just use Silicon as primary for "Download" 
+            // or maybe the logic is "Clicking this card goes to GitHub releases unless we are sure".
+            // Let's set it to Silicon for now as a safe bet for "Mac" card
+            macCard.href = platforms['darwin-aarch64'].url;
+        }
+
+        // Update Windows
+        const winCard = document.getElementById('dl-win');
+        if (winCard && platforms['windows-x86_64']) {
+            winCard.href = platforms['windows-x86_64'].url;
+        }
+
+        // Update Linux
+        const linuxCard = document.getElementById('dl-linux');
+        if (linuxCard && platforms['linux-x86_64']) {
+            linuxCard.href = platforms['linux-x86_64'].url;
+        }
+    }
+
+    function updateHeroButton(heroBtn, navBtn, os, data) {
+        let downloadUrl = '';
+        let label = 'Download Now';
+
+        if (os === 'mac') {
+            // Simplified: Default to Silicon (aarch64) or maybe try to detect?
+            // Detection of M1 vs Intel via JS is tricky/unreliable. 
+            // Strategy: Link to the 'darwin-aarch64' .dmg by default, or provide a dual option?
+            // For this user request: "provide direct download links". 
+            // Let's default to Apple Silicon as it's the future.
+            if (data.platforms['darwin-aarch64']) {
+                downloadUrl = data.platforms['darwin-aarch64'].url;
+                label = `Download for macOS`;
+            }
+        } else if (os === 'win') {
+            if (data.platforms['windows-x86_64']) {
+                downloadUrl = data.platforms['windows-x86_64'].url;
+                label = `Download for Windows`;
+            }
+        } else if (os === 'linux') {
+            if (data.platforms['linux-x86_64']) {
+                downloadUrl = data.platforms['linux-x86_64'].url;
+                label = `Download for Linux`;
+            }
+        }
+
+        // Apply updates
+        if (downloadUrl) {
+            const updateBtn = (btn) => {
+                if (!btn) return;
+                // Preserve the icon if possible, just update text node
+                // btn.innerHTML is tricky if we want to keep SVG. 
+                // Let's reconstruct or just update textContent?
+                // Reconstructing is safer for layout.
+                const svgIcon = btn.querySelector('svg') ? btn.querySelector('svg').outerHTML : '';
+                btn.innerHTML = `${svgIcon} ${label} <span style="opacity:0.6; font-size:0.85em; margin-left:6px;">(v${data.version})</span>`;
+                btn.href = downloadUrl;
+            };
+
+            updateBtn(heroBtn);
+            // Optional: Update navbar button too?
+            // updateBtn(navBtn); // Maybe keep navbar simple
+        }
+    }
+
+    // Initialize
+    initSmartDownloads();
 
     // Scroll Reveal Animation
     const revealElements = document.querySelectorAll(
