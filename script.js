@@ -58,6 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) throw new Error('Failed to load release data');
             const data = await response.json();
 
+            // Update version badge
+            updateVersionBadge(data.version);
+
             // Update Platform Cards with direct links
             updatePlatformCards(data.platforms);
 
@@ -69,6 +72,13 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.warn('Smart Download Error:', error);
             // Fallback is already set in HTML (GitHub Releases)
+        }
+    }
+
+    function updateVersionBadge(version) {
+        const badge = document.getElementById('version-badge');
+        if (badge && version) {
+            badge.querySelector('span').textContent = version;
         }
     }
 
