@@ -1,6 +1,23 @@
 {
-  "version": "v1.0.7",
-  "notes": "Update to version v1.0.7",
-  "pub_date": "2026-01-07T17:28:37.639Z",
-  "platforms": {}
+  "version": "v1.0.8",
+  "notes": "Update to version v1.0.8",
+  "pub_date": "2026-01-07T17:45:53.736Z",
+  "platforms": {
+    "darwin-aarch64": {
+      "signature": "",
+      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.0.8/RestDock_0.1.0_aarch64.dmg"
+    },
+    "darwin-x86_64": {
+      "signature": "",
+      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.0.8/RestDock_0.1.0_x64.dmg"
+    },
+    "linux-x86_64": {
+      "signature": "",
+      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.0.8/RestDock_0.1.0_amd64.AppImage"
+    },
+    "windows-x86_64": {
+      "signature": "",
+      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.0.8/RestDock_0.1.0_x64-setup.exe"
+    }
+  }
 }
