@@ -1,15 +1,23 @@
 {
-  "version": "v1.0.10",
-  "notes": "Update to version v1.0.10",
-  "pub_date": "2026-01-07T18:40:03.730Z",
+  "version": "v1.0.11",
+  "notes": "Update to version v1.0.11",
+  "pub_date": "2026-01-07T18:51:52.790Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTZWRaUkhnQTREc29RSkdnb1dUVXR5bkNsV3pjSkZoQTVZQ29ndEF2VG9nQUY3a3VKRjhaZ0ZQa240YUNWK3NpZVR4dE9VaEZmdE1YK0lpVk45OFJiL0x6MlBnY3FRbVFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzY3ODExMDQ1CWZpbGU6UmVzdERvY2suYXBwLnRhci5negp2Q3lZN3B0RkxWNFVidzM1bFJ4VW9IbXdYL1pzNEU2U1VPb09XYUNDRnhFYjg5TXhsTm0rVXNKTWJTakxOb2dIUXhybUZVdG9tK25TUGhRaGhpTExDZz09Cg==",
-      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.0.10/RestDock_aarch64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTZWRaUkhnQTREc2k4RmRrNTJYdm9vZ1B4MWNpK2x2cVB6U1h3YWEvdTFHNkRRVWQrWWI3SC8ySnFNL0pJR2U5V1NYQVBiMnlxRnkyeHlJNVhxeXQrckNLdkJzWGliV3d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzY3ODExNzI2CWZpbGU6UmVzdERvY2suYXBwLnRhci5negpYbzVhTHNMbS9aZjZidVR0ZmNHT205WlFmclY4RXZzUFI5ZGRldEZMdnBYYldlRC9rM1dEY2VQUS9kQktiZWw3U2FxRE9JVis4NGp6V2s3aXAyeitDQT09Cg==",
+      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.0.11/RestDock_aarch64.app.tar.gz"
     },
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTZWRaUkhnQTREc3Y1cldGc2ZHdVR3dFNVa1cwOXR2OCtHY1ZRcVc4U21leDh4a0JJNDI5RURNdVFOUEduV0RsTmlDWXg5WXQwUEpqVUZScnRubkpuN1FaNFNtK3BmT3dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzY3ODExMDMzCWZpbGU6UmVzdERvY2suYXBwLnRhci5negoyUC9XY1RINnlKVUZkaE11Q2t3U3pRUzlmeWZwYTlZVHhXUGpwbTZKQWlaYU4vWTZ1SDNyZGdOQXZyVlVpK2lVZ3p0N0o2cSsvK0Nud3VZekRQS2ZDQT09Cg==",
-      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.0.10/RestDock_x64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTZWRaUkhnQTREc2kxRy8zZ0xzNkEvYXRlbXQ4a0ZOcnVTY1llQmI1UTZZeDlGNGFPS3JzcnpRWCtvMU9YQ0VMSFgyOXkvN0owa3VEbWgwVmpSZ29lU0o0dmtvaUFVQWd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzY3ODExNjUwCWZpbGU6UmVzdERvY2suYXBwLnRhci5negpQWHBoUFJhS2VFMzRKMHlPMythS2R1YlA2aUFGVzJUN2xJOUh5Z2dGYURnTjd5TmJWOFZ5TTN1WnFmcmwyRGNRS09zZXFNYWNxZ3ZLbWNWSzNYbFlCdz09Cg==",
+      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.0.11/RestDock_x64.app.tar.gz"
+    },
+    "linux-x86_64": {
+      "signature": "",
+      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.0.11/RestDock_0.1.0_amd64.AppImage"
+    },
+    "windows-x86_64": {
+      "signature": "",
+      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.0.11/RestDock_0.1.0_x64-setup.exe"
     }
   }
 }
