@@ -1,23 +1,15 @@
 {
-  "version": "v1.0.8",
-  "notes": "Update to version v1.0.8",
-  "pub_date": "2026-01-07T17:45:53.736Z",
+  "version": "v1.0.9",
+  "notes": "Update to version v1.0.9",
+  "pub_date": "2026-01-07T18:21:26.656Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "",
-      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.0.8/RestDock_0.1.0_aarch64.dmg"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTZWRaUkhnQTREc2hJTkx1YW1lYjhXa1h1eU53TjYyNVU4dVduOFRzWnlzMW81ZXlDVDZjaWRwYVh0VG1mV1dlY1RhNFJ2cGZGSVd2MnUrSUtIQ0JYVHdOclBDZlV0bEFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzY3ODEwMDEzCWZpbGU6UmVzdERvY2suYXBwLnRhci5nego1c3NEV20vR1lpMTJhUFhUR29jQUh5V2JuaTZZcDZFcnMxZjluWDNoYjNpbCs1RGQxVEZVcW52SXNNMjNGWmEyRVdHR1Q0SXRsejFCYnU2M1llSzdBZz09Cg==",
+      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.0.9/RestDock.app.tar.gz"
     },
     "darwin-x86_64": {
-      "signature": "",
-      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.0.8/RestDock_0.1.0_x64.dmg"
-    },
-    "linux-x86_64": {
-      "signature": "",
-      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.0.8/RestDock_0.1.0_amd64.AppImage"
-    },
-    "windows-x86_64": {
-      "signature": "",
-      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.0.8/RestDock_0.1.0_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTZWRaUkhnQTREc3FibWh1andmMC92R1A4M2RuTGJsN0JBSVFSQjZMbm56dUR1Y0FYREhnS0l2bzVhbUtodnMzQXNZZUtVL28wU2RWdnZJRTVFU3lQU0pwczhnWVV1K3c4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzY3ODA5ODg3CWZpbGU6UmVzdERvY2suYXBwLnRhci5negpzdTRGL3ZrMlBxUlZpbTNkUGFXQyttbHBVelBjWTBlTWdYdzhHNHpyRFFmRU9lRkpnWUpkY0htc1N2eW9ZeExONUNVQXJzdHd1dlBkSXRIMHRhSCtCdz09Cg==",
+      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.0.9/RestDock.app.tar.gz"
     }
   }
 }
