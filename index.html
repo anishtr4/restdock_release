@@ -72,8 +72,8 @@
                     API Testing at the <span class="gradient-text">Speed of Rust.</span>
                 </h1>
                 <p class="hero-subtitle">
-                    A premium, clutter-free API client built with Rust and Tauri. Zero electron bloat. Instant startup.
-                    Beautiful by default.
+                    A powerful, high-performance API client built for modern development. Zero bloat. Instant startup.
+                    Engineered for speed and simplicity.
                 </p>
                 <div class="hero-cta">
                     <a href="#download" class="btn btn-primary btn-large" id="hero-download-btn">
@@ -419,6 +419,20 @@
                         </div>
                         <span class="btn-xs">Download</span>
                     </a>
+                </div>
+
+                <div class="mac-troubleshoot">
+                    <p class="troubleshoot-trigger"
+                        onclick="document.getElementById('mac-help').classList.toggle('visible')">
+                        Having trouble opening on macOS?
+                    </p>
+                    <div id="mac-help" class="mac-help-content">
+                        <p>If you see <strong>"App is damaged and can't be opened"</strong>, it's a common issue with
+                            unsigned apps on macOS.</p>
+                        <p>To fix it, run this command in your terminal:</p>
+                        <code>xattr -cr /Applications/RestDock.app</code>
+                        <p class="small">This removes the quarantine attribute set by Gatekeeper.</p>
+                    </div>
                 </div>
 
                 <p class="download-note">

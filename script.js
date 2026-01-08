@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Reconstructing is safer for layout.
                 const svgIcon = btn.querySelector('svg') ? btn.querySelector('svg').outerHTML : '';
                 btn.innerHTML = `${svgIcon} ${label} <span style="opacity:0.6; font-size:0.85em; margin-left:6px;">(v${data.version})</span>`;
-                btn.href = downloadUrl;
+                // btn.href = downloadUrl; // Keep scroll to #download behavior
             };
 
             updateBtn(heroBtn);
