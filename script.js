@@ -181,8 +181,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 // btn.innerHTML is tricky if we want to keep SVG. 
                 // Let's reconstruct or just update textContent?
                 // Reconstructing is safer for layout.
-                const svgIcon = btn.querySelector('svg') ? btn.querySelector('svg').outerHTML : '';
-                btn.innerHTML = `${svgIcon} ${label} <span style="opacity:0.6; font-size:0.85em; margin-left:6px;">(v${data.version})</span>`;
+                // Ensure "v" prefix comes exactly once
+                const displayVersion = `v${data.version.replace(/^v/, '')}`;
+                btn.innerHTML = `${svgIcon} ${label} <span style="opacity:0.6; font-size:0.85em; margin-left:6px;">(${displayVersion})</span>`;
                 // btn.href = downloadUrl; // Keep scroll to #download behavior
             };
 
