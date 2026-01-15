@@ -1,23 +1,23 @@
 {
-  "version": "v1.1.4",
-  "notes": "Update to version v1.1.4",
-  "pub_date": "2026-01-15T16:47:23.055Z",
+  "version": "v1.1.5",
+  "notes": "Update to version v1.1.5",
+  "pub_date": "2026-01-15T16:55:39.919Z",
   "platforms": {
     "darwin-aarch64": {
       "signature": "",
-      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.1.4/RestDock_1.1.4_aarch64.dmg"
+      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.1.5/RestDock_1.1.5_aarch64.dmg"
     },
     "darwin-x86_64": {
       "signature": "",
-      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.1.4/RestDock_1.1.4_x64.dmg"
+      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.1.5/RestDock_1.1.5_x64.dmg"
     },
     "linux-x86_64": {
       "signature": "",
-      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.1.4/RestDock_1.1.4_amd64.AppImage"
+      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.1.5/RestDock_1.1.5_amd64.AppImage"
     },
     "windows-x86_64": {
       "signature": "",
-      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.1.4/RestDock_1.1.4_x64-setup.exe"
+      "url": "https://github.com/anishtr4/restdock_release/releases/download/v1.1.5/RestDock_1.1.5_x64-setup.exe"
     }
   }
 }
