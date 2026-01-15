@@ -78,7 +78,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateVersionBadge(version) {
         const badge = document.getElementById('version-badge');
         if (badge && version) {
-            badge.querySelector('span').textContent = version;
+            badge.style.display = 'inline-flex';
+            const textSpan = badge.querySelector('.version-text');
+            if (textSpan) {
+                const displayVersion = version.startsWith('v') ? version : `v${version}`;
+                textSpan.textContent = displayVersion;
+            }
         }
     }
 
@@ -93,8 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = document.getElementById(cardId);
         if (card) {
             card.style.borderColor = 'var(--color-primary)';
-            card.style.background = 'linear-gradient(135deg, rgba(255, 94, 0, 0.1), rgba(255, 255, 255, 0.05))';
-            card.style.transform = 'scale(1.03) translateY(-5px)';
+            card.style.backgroundColor = 'rgba(59, 130, 246, 0.05)';
+            card.style.transform = 'scale(1.02) translateY(-4px)';
 
             // "Recommended" Badge
             if (!card.querySelector('.rec-badge')) {
@@ -105,12 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge.style.top = '-12px';
                 badge.style.left = '24px';
                 badge.style.background = 'var(--color-primary)';
-                badge.style.color = 'white';
+                badge.style.color = '#fff';
                 badge.style.padding = '4px 12px';
-                badge.style.borderRadius = '20px';
-                badge.style.fontSize = '12px';
+                badge.style.borderRadius = 'var(--radius-full)';
+                badge.style.fontSize = '0.75rem';
                 badge.style.fontWeight = '600';
-                badge.style.boxShadow = '0 4px 12px rgba(255, 94, 0, 0.4)';
+                badge.style.boxShadow = 'var(--shadow-md)';
                 card.appendChild(badge);
             }
         }

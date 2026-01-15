@@ -48,82 +48,50 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-bg-elements">
-            <!-- Animated Orbs -->
-            <div class="hero-gradient-orb orb-1"></div>
-            <div class="hero-gradient-orb orb-2"></div>
-            <!-- Dot Pattern -->
-            <div class="grid-pattern"></div>
-        </div>
         <div class="hero-container">
-            <!-- Left: Content -->
-            <!-- Hero Content -->
-            <div class="hero-content">
+            <!-- Left: Text Content -->
+            <div class="hero-text">
                 <div class="hero-badges">
-                    <div class="hero-badge">
-                        <span class="badge-icon">⚡</span>
-                        <span>Native • Lightweight • Offline-First</span>
+                    <div class="hero-badge" id="version-badge" style="display: none;">
+                        <span class="badge-dot green"></span>
+                        <span class="version-text">Latest</span>
                     </div>
-                    <div class="version-badge" id="version-badge">
-                        <span>v1.0.0</span>
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        <span>Enterprise Ready API Client</span>
                     </div>
                 </div>
+
                 <h1 class="hero-title">
-                    API Testing at the <span class="gradient-text">Speed of Rust.</span>
+                    Your Localhost, <br>
+                    <span class="text-gradient" style="white-space: nowrap;">Supe<svg class="hero-bolt-char"
+                            viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" />
+                        </svg>charged.</span>
                 </h1>
+
                 <p class="hero-subtitle">
-                    A powerful, high-performance API client built for modern development. Zero bloat. Instant startup.
-                    Engineered for speed and simplicity.
+                    A lightning-fast, privacy-focused API client designed for modern engineering. Experience rock-solid
+                    stability and offline reliability in a beautiful, distraction-free interface.
                 </p>
-                <div class="hero-cta">
-                    <a href="#download" class="btn btn-primary btn-large" id="hero-download-btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                            <polyline points="7 10 12 15 17 10" />
-                            <line x1="12" y1="15" x2="12" y2="3" />
-                        </svg>
-                        Download Now
+
+                <div class="hero-cta-group">
+                    <a href="#download" class="btn btn-primary" id="hero-download-btn">
+                        Download for macOS
                     </a>
-                    <a href="#features" class="btn btn-secondary btn-large">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10" />
-                            <polyline points="12 16 16 12 12 8" />
-                            <line x1="8" y1="12" x2="16" y2="12" />
-                        </svg>
-                        Learn More
+                    <a href="#features" class="btn btn-secondary">
+                        Explore Features
                     </a>
+                </div>
+
+                <div class="hero-trust">
+                    <span>Trusted by developers at innovative companies</span>
                 </div>
             </div>
 
-
-
-
-
-            <!-- Right: 3D Visual -->
+            <!-- Right: Product Visual -->
             <div class="hero-visual">
-                <div class="perspective-wrapper float">
-                    <img src="app-screenshot-v3.png" alt="RestDock Application Interface"
-                        class="app-screenshot-standalone">
-
-                    <!-- Magic Sparkles -->
-                    <div class="sparkle s-1 float-delay-1">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary)">
-                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
-                        </svg>
-                    </div>
-                    <div class="sparkle s-2 float-small">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#FEF08A"> <!-- Yellow-200 -->
-                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
-                        </svg>
-                    </div>
-                    <div class="sparkle s-3 float-delay-2">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
-                        </svg>
-                    </div>
-                </div>
+                <img src="app-screenshot-v3.png" alt="RestDock Interface" class="hero-screenshot">
             </div>
         </div>
     </section>
@@ -136,88 +104,82 @@
                 <p class="section-subtitle">No fluff. Just the tools you need to build better APIs, faster.</p>
             </div>
 
-            <div class="bento-grid">
-                <!-- Large Feature: Native Performance -->
-                <div class="bento-card bento-large featured">
-                    <div class="card-glow"></div>
-                    <div class="bento-content">
-                        <div class="bento-icon-wrapper">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bento-icon">
-                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                            </svg>
-                        </div>
-                        <h3>Native Performance</h3>
-                        <p>Built with Rust & Tauri. Launches under 1s, uses < 50MB RAM. The speed you've been
-                                missing.</p>
-                                <div class="bento-stats">
-                                    <div class="stat"><span>&lt; 15MB</span>Size</div>
-                                    <div class="stat"><span>&lt; 1s</span>Startup</div>
-                                </div>
+            <div class="feature-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
                     </div>
+                    <h3>Native Performance</h3>
+                    <p>Built with Rust & Tauri. Launches under 1s, uses < 50MB RAM. The speed you've been missing.</p>
                 </div>
 
-                <!-- Medium Feature: Mock Server -->
-                <div class="bento-card bento-medium">
-                    <div class="bento-content">
-                        <div class="bento-icon-wrapper">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bento-icon">
-                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                            </svg>
-                        </div>
-                        <h3>Built-in Mock Server</h3>
-                        <p>Design APIs before implementation. Define routes, response codes, and network delays.</p>
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                        </svg>
                     </div>
+                    <h3>Built-in Mock Server</h3>
+                    <p>Design APIs before implementation. Define routes, response codes, and network delays.</p>
                 </div>
 
-                <!-- Medium Feature: Advanced Requests -->
-                <div class="bento-card bento-medium">
-                    <div class="bento-content">
-                        <div class="bento-icon-wrapper">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bento-icon">
-                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                            </svg>
-                        </div>
-                        <h3>Advanced Requests</h3>
-                        <p>Multipart forms, binary uploads, URL-encoded bodies, and global environment variables.</p>
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
                     </div>
+                    <h3>Advanced Requests</h3>
+                    <p>Multipart forms, binary uploads, URL-encoded bodies, and global environment variables.</p>
                 </div>
 
-                <!-- Wide Feature: Organization -->
-                <div class="bento-card bento-wide">
-                    <div class="bento-content">
-                        <div class="bento-icon-wrapper">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bento-icon">
-                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3>Power Organization</h3>
-                        <p>Collections, deep folder nesting, and persistent request history. Keep your workspace clean.
-                        </p>
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
+                            </path>
+                        </svg>
                     </div>
+                    <h3>Power Organization</h3>
+                    <p>Collections, deep folder nesting, and persistent request history. Keep your workspace clean.</p>
                 </div>
 
-                <!-- Small Feature: Theming -->
-                <div class="bento-card bento-small">
-                    <div class="bento-content">
-                        <div class="bento-icon-wrapper">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bento-icon">
-                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
-                            </svg>
-                        </div>
-                        <h3>Theming</h3>
-                        <p>Sleek Dark & Light modes.</p>
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                        </svg>
                     </div>
+                    <h3>Theming</h3>
+                    <p>Sleek Dark & Light modes that adapt to your system preferences automatically.</p>
                 </div>
 
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+                            <line x1="12" y1="2" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3>Offline Capable</h3>
+                    <p>Local-first architecture ensures you can work without internet. No cloud dependencies.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -234,26 +196,12 @@
 
             <div class="roadmap-columns">
                 <!-- In Progress Column -->
-                <div class="roadmap-column">
+                <div class="roadmap-column col-in-progress">
                     <div class="column-header in-progress">
                         <span class="column-dot"></span>
                         <h3>In Progress</h3>
                     </div>
                     <div class="column-items">
-                        <div class="roadmap-item">
-                            <div class="item-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                    <polyline points="17 8 12 3 7 8" />
-                                    <line x1="12" y1="3" x2="12" y2="15" />
-                                </svg>
-                            </div>
-                            <div class="item-content">
-                                <h4>Postman & Insomnia Import</h4>
-                                <p>One-click migration for your existing collections.</p>
-                            </div>
-                        </div>
                         <div class="roadmap-item">
                             <div class="item-icon">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -271,25 +219,12 @@
                 </div>
 
                 <!-- Planned Column -->
-                <div class="roadmap-column">
+                <div class="roadmap-column col-planned">
                     <div class="column-header planned">
                         <span class="column-dot"></span>
                         <h3>Planned</h3>
                     </div>
                     <div class="column-items">
-                        <div class="roadmap-item">
-                            <div class="item-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <polyline points="16 18 22 12 16 6"></polyline>
-                                    <polyline points="8 6 2 12 8 18"></polyline>
-                                </svg>
-                            </div>
-                            <div class="item-content">
-                                <h4>Code Generation</h4>
-                                <p>Export to cURL, Python, JavaScript, Go, and more.</p>
-                            </div>
-                        </div>
                         <div class="roadmap-item">
                             <div class="item-icon">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -321,7 +256,7 @@
                 </div>
 
                 <!-- Exploring Column -->
-                <div class="roadmap-column">
+                <div class="roadmap-column col-exploring">
                     <div class="column-header exploring">
                         <span class="column-dot"></span>
                         <h3>Exploring</h3>
@@ -435,9 +370,6 @@
                     </div>
                 </div>
 
-                <p class="download-note">
-                    Released under MIT License.
-                </p>
             </div>
         </div>
     </section>
